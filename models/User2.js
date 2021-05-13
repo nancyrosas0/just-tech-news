@@ -50,3 +50,9 @@ hooks: {
 //     newUserData.password = await bcrypt.hash(newUserData.password, 10);
 //     return newUserData;
 // }
+
+{
+    "username": "lololol",
+      "email": "moose@goose.com",
+      "password": "YesYesYes"
+  }
