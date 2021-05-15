@@ -58,7 +58,6 @@ router.get('/:id', (req, res) => {
 
 // POST /api/users
 router.post('/', (req, res) => {
-
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
@@ -76,7 +75,6 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) =>{
     //Query operation
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-
     User.findOne({
         where: {
             email: req.body.email
@@ -90,6 +88,7 @@ router.post('/login', (req, res) =>{
         //res.json({ user: dbUserData });
         // verify user
         const validPassword = dbUserData.checkPassword(req.body.password);
+        
         if (!validPassword) {
             res.status(400).json({ message: "Incorrect password" });
             return;
